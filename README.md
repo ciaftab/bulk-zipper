@@ -1,34 +1,21 @@
-# Bulk Zipper 🗜️
+# Bulk-Zipper 🗜️
 
-Bulk Zipper is a lightweight Python utility to **batch-zip multiple files and folders** inside a target directory.  
-It provides **4 modes** depending on your needs: fast wrapping (no compression) or compressed zipping, with or without deleting originals.
-
----
-
-## ✨ Features
-- 🔄 Automatically zips **every file and folder** in a given directory.
-- ⚡ **Fast mode** (no compression, just wrapping in `.zip`).
-- 📦 **Compressed mode** (smaller size, slower).
-- 🗑️ Option to **delete originals** after zipping.
-- 🖥 Works on **Windows, macOS, and Linux**.
-- 🐍 Pure Python – no external dependencies.
+Bulk-Zipper is a lightweight Python utility to **batch zip all files and folders** inside a directory.  
+It comes with 4 modes so you can choose between **fast or compressed zipping** and whether to **delete originals** or keep them.
 
 ---
 
-## 📂 Modes Overview
-
-| Mode | Compression | Delete Originals | Script |
-|------|-------------|------------------|--------|
-| ⚡ Fast + Delete | ❌ None (ZIP_STORED) | ✅ Yes | `bulk_zip_fast_delete.py` |
-| ⚡ Fast + Keep | ❌ None (ZIP_STORED) | ❌ No | `bulk_zip_fast_keep.py` |
-| 📦 Compressed + Delete | ✅ ZIP_DEFLATED | ✅ Yes | `bulk_zip_compress_delete.py` |
-| 📦 Compressed + Keep | ✅ ZIP_DEFLATED | ❌ No | `bulk_zip_compress_keep.py` |
+## 🚀 Features
+- Zip all files/folders in a directory at once
+- Choose between **fast (no compression)** and **compressed (ZIP_DEFLATED)**
+- Option to **delete or keep** original files after zipping
+- Automatically skips existing archives (`.zip`, `.rar`, `.7z`, `.tar`, `.gz`, `.bz2`, `.xz`, `.iso`)
+- Prints progress in the terminal
 
 ---
 
-## 🚀 Quick Start
-
-1. **Clone the repo**
-   ```bash
-   git clone https://github.com/ciaftab/bulk-zipper.git
-   cd bulk-zipper
+## 📦 Installation
+Clone this repository:
+```bash
+git clone https://github.com/your-username/bulk-zipper.git
+cd bulk-zipper
