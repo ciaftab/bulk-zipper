@@ -17,5 +17,5 @@ It comes with 4 modes so you can choose between **fast or compressed zipping** a
 ## 📦 Installation
 Clone this repository:
 ```bash
-git clone https://github.com/your-username/bulk-zipper.git
+git clone https://github.com/ciaftab/bulk-zipper.git
 cd bulk-zipper
