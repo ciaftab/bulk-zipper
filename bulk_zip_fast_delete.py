@@ -3,7 +3,7 @@ import zipfile
 import shutil
 
 # 🔧 Change this to your target folder
-main_folder = r"D:\Development\Courses\MERN-Delta++\PART-1"
+main_folder = r"D:\Development\Courses\Files\"
 
 skip_extensions = [
     ".zip", ".rar", ".7z", ".tar", ".gz",
