@@ -2,24 +2,26 @@ import os
 import zipfile
 import shutil
 
-"""
-Bulk Zipper - Fast Mode (Delete Originals)
-------------------------------------------
-- Zips all files and folders inside target directory.
-- Uses no compression (ZIP_STORED) → fastest.
-- Originals are permanently deleted after zipping.
-"""
-
+# 🔧 Change this to your target folder
 main_folder = r"D:\Development\Courses\MERN-Delta++\PART-1"
 
+skip_extensions = [
+    ".zip", ".rar", ".7z", ".tar", ".gz",
+    ".tar.gz", ".tgz", ".bz2", ".xz", ".iso"
+]
+
 for item in os.listdir(main_folder):
+    if any(item.lower().endswith(ext) for ext in skip_extensions):
+        print(f"⏭️ Skipping archive file: {item}")
+        continue
+
     item_path = os.path.join(main_folder, item)
     zip_path = os.path.join(main_folder, f"{item}.zip")
 
     if os.path.exists(zip_path):
         os.remove(zip_path)
 
-    print(f"⏳ Creating (fast, delete): {item} ...")
+    print(f"⏳ Zipping (fast, no compression): {item} ...")
 
     with zipfile.ZipFile(zip_path, 'w', compression=zipfile.ZIP_STORED) as zf:
         if os.path.isdir(item_path):
@@ -31,8 +33,9 @@ for item in os.listdir(main_folder):
         else:
             zf.write(item_path, arcname=item)
 
-    print(f"✅ Created: {item}.zip")
+    print(f"✅ Done: {item}.zip")
 
+    # Delete original after zipping
     if os.path.isdir(item_path):
         shutil.rmtree(item_path)
         print(f"🗑️ Deleted folder: {item}")
@@ -40,4 +43,4 @@ for item in os.listdir(main_folder):
         os.remove(item_path)
         print(f"🗑️ Deleted file: {item}")
 
-print("\n🚀 Fast mode (delete) complete.")
+print("\n🎉 All items zipped (fast) & originals deleted!")
